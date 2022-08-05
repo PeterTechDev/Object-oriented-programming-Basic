@@ -1,4 +1,5 @@
-package br.com.desafio.dominio;
+import br.com.desafio.dominio.Curso;
+import br.com.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
 
@@ -9,7 +10,6 @@ public class Main {
         curso1.setDescricao("Basico do Javinha");
         curso1.setCargaHoraria(5);
 
-
         Curso curso2 = new Curso();
         curso2.setTitulo("Curso Angular");
         curso2.setDescricao("Basico de Angular");
@@ -17,7 +17,7 @@ public class Main {
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("Mentoria de milhões");
-        mentoria.setDescricacao("Um guia para sua carreira decolar");
+        //mentoria.setDescricacao("Um guia para sua carreira decolar");
         mentoria.setData(LocalDate.now());
 
         System.out.println(curso1);
