@@ -1,4 +1,6 @@
+import br.com.desafio.dominio.Bootcamp;
 import br.com.desafio.dominio.Curso;
+import br.com.desafio.dominio.Dev;
 import br.com.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
@@ -17,12 +19,24 @@ public class Main {
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("Mentoria de milhões");
-        //mentoria.setDescricacao("Um guia para sua carreira decolar");
+        // mentoria.setDescricacao("Um guia para sua carreira decolar");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
 
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Tomorrow Talents");
+
+        bootcamp.setDescricao("Curso com duração de três meses para formação de nossos talentos");
+
+        Dev devPeter = new Dev();
+        devPeter.setNome("Peter");
+        devPeter.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos inscritos Peter" + devPeter.getConteudosInscritos());
+        devPeter.progredir();
+        System.out.println("Conteudos inscritos Peter" + devPeter.getConteudosConcluidos());
+
+        Dev devLebron = new Dev();
+        devLebron.setNome("Lebron");
+        System.out.println("Conteudos inscritos Lebron" + devLebron.getConteudosInscritos());
     }
 }
