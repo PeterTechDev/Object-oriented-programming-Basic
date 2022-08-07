@@ -19,14 +19,16 @@ public class Main {
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("Mentoria de milhões");
-        // mentoria.setDescricacao("Um guia para sua carreira decolar");
+        mentoria.setDescricao("Um guia para sua carreira decolar");
         mentoria.setData(LocalDate.now());
 
 
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Tomorrow Talents");
-
         bootcamp.setDescricao("Curso com duração de três meses para formação de nossos talentos");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
 
         Dev devPeter = new Dev();
         devPeter.setNome("Peter");
@@ -35,8 +37,16 @@ public class Main {
         devPeter.progredir();
         System.out.println("Conteudos inscritos Peter" + devPeter.getConteudosConcluidos());
 
-        Dev devLebron = new Dev();
-        devLebron.setNome("Lebron");
-        System.out.println("Conteudos inscritos Lebron" + devLebron.getConteudosInscritos());
+        Dev devJoao = new Dev();
+        devJoao.setNome("Joao");
+        devJoao.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
+        devJoao.progredir();
+        devJoao.progredir();
+        devJoao.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
+        System.out.println("XP:" + devJoao.calcularTotalXp());
     }
 }
